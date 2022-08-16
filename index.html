@@ -1,0 +1,133 @@
+<!--A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:black;
+            color:white;
+        }
+        .container{
+            width: 80%;
+            margin:2px auto;
+
+        }
+        .information_space{
+            border:2px solid black;
+            background-color: rgb(23, 75, 75);
+            padding:2px 15px;
+            line-height: 1.2rem;
+            border-radius: 20px;
+            font-size: 1.1;
+            font-family:sans-serif;
+            margin-top: 60px;
+            
+        }
+
+        .app_space {
+            display: flex;
+            flex-direction: column;
+            margin:15px 0px;
+            border-radius: 20px;
+            height:100px;
+           
+            
+        }
+
+        .numberToBeCheck{
+            width:100%;
+            border:2px solid ;
+            border-radius: 20px;
+            height:40px;
+            background-color: rgb(23, 75, 75);
+            text-align: center;
+            color: white;
+            padding-top:10px;
+            padding-bottom: 10px;
+        }
+
+        ::placeholder{
+            color:white;
+            font-size: medium;
+        }
+
+        button{
+            width:100px;
+            font-size: medium;
+            border-radius: 10px;
+            background-color: rgb(23, 75, 75);
+            color: white;
+            align-self: center;
+            padding:5px 0px 5px 0px;
+            cursor: pointer;
+
+        
+
+        }
+
+        button:hover{
+            background-color:rgb(13, 97, 97);
+            color:white;
+        }
+
+        .displayResult{
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            margin-top: 30px;
+        
+          
+            
+        }
+    </style>
+</head>
+<body>
+    <div class ="container">
+        <div class="information_space">
+            <h2>Prime Number</h2>
+            <h3>What is a prime number?</h3>
+            <p>
+                A prime number is a whole number greater than 1 with only two factors- themselves and 1
+                .It can also be define as a natural number greater than 1 that is not a product of two smaller natural number.
+                Let consider 11 as an example in which it only divisor are 1 and 11 i.e dividing 11 result in 
+                a remainder  e.g 11 &#xF7 6 = 1 remainder 5
+                 <br>
+                NOTE: 0 and 1 are not prime number<br>
+                BONUS: Any number that is not a prime number is called <em>composite number</em>
+            </p>
+        </div>
+        <div class="app_space">
+
+            <input type="number" class="numberToBeCheck" placeholder="Enter Number..."><br>
+            <button onclick ="isPrime()">Check</button>
+            <p class="displayResult"></p> 
+        </div>
+    </div>
+   
+    <script>
+         
+        
+        const displayResult = document.querySelector('.displayResult');
+      
+         function isPrime(){
+            const numberToBeCheck = document.querySelector('.numberToBeCheck').value;
+            for(let i = 2; i < numberToBeCheck;i++){
+               if(numberToBeCheck % i === 0){
+                   displayResult.innerHTML = `${numberToBeCheck} is not a prime number`;
+                   break;
+               }else{
+                displayResult.innerHTML = `${numberToBeCheck} is  a prime number`;
+               }
+            }
+            
+           
+         }
+    </script>
+</body>
+</html>
+
